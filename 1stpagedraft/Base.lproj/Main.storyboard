@@ -996,9 +996,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7HS-ei-r7E"/>
-        <segue reference="cyo-uB-hdg"/>
-        <segue reference="IcU-Rp-UHQ"/>
         <segue reference="1Rv-a3-wk8"/>
+        <segue reference="h2s-He-vEp"/>
+        <segue reference="cyo-uB-hdg"/>
+        <segue reference="7HS-ei-r7E"/>
     </inferredMetricsTieBreakers>
 </document>
