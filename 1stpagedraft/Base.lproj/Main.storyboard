@@ -466,8 +466,11 @@
                                     <rect key="frame" x="678" y="364" width="86" height="60"/>
                                 </variation>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apO-y9-lfA">
+                                <rect key="frame" x="384" y="781" width="240" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-uF-HwO">
-                                <rect key="frame" x="336" y="941" width="158" height="14"/>
+                                <rect key="frame" x="356" y="940" width="158" height="14"/>
                                 <state key="normal" title="Unknown Organism"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="645" y="606" width="135" height="30"/>
@@ -476,9 +479,6 @@
                                     <action selector="unknown:" destination="PRQ-5k-lEe" eventType="touchUpInside" id="I4X-af-M6b"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apO-y9-lfA">
-                                <rect key="frame" x="384" y="781" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.5"/>
@@ -885,6 +885,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Records" id="aAU-Tm-ffX">
+                            <connections>
+                                <segue destination="2dM-YU-tVV" kind="presentation" id="IXW-DU-AGA"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="Ywx-hg-aGE">
                         <barButtonItem key="leftBarButtonItem" title="To 3" id="b7X-yM-Eg5">
                             <connections>
@@ -892,6 +899,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="displayhealth" destination="PAG-Ij-AAg" id="ce2-TP-ZR4"/>
@@ -900,7 +908,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ys9-na-5m8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6092.25" y="63"/>
+            <point key="canvasLocation" x="6133" y="121"/>
+        </scene>
+        <!--Page5 View Controller-->
+        <scene sceneID="Li2-Yp-rZ2">
+            <objects>
+                <viewController id="2dM-YU-tVV" customClass="Page5ViewController" customModule="firstpagedraft" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9dw-rH-war"/>
+                        <viewControllerLayoutGuide type="bottom" id="jgZ-Bz-hYz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ai3-Az-m1h">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Back" id="BG3-wc-dpv">
+                            <connections>
+                                <segue destination="cs2-0Y-Kx9" kind="presentation" id="Cw7-C6-emm"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="O52-LF-HPK"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5a-dB-VtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7609" y="46"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cOQ-Pw-0Ic">
@@ -1005,11 +1040,30 @@
             </objects>
             <point key="canvasLocation" x="5372.25" y="102"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IIv-U2-FjH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RlJ-a2-Koa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kyw-mK-Vha">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2dM-YU-tVV" kind="relationship" relationship="rootViewController" id="0WK-Hy-Nzy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCr-wf-j0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6885" y="21"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IcU-Rp-UHQ"/>
-        <segue reference="cyo-uB-hdg"/>
-        <segue reference="7HS-ei-r7E"/>
         <segue reference="1Rv-a3-wk8"/>
+        <segue reference="IcU-Rp-UHQ"/>
+        <segue reference="iCX-IR-ono"/>
+        <segue reference="Cw7-C6-emm"/>
+        <segue reference="IXW-DU-AGA"/>
     </inferredMetricsTieBreakers>
 </document>

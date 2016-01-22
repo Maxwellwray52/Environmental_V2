@@ -201,17 +201,84 @@ class viewcontroller2ViewController: UIViewController, UIImagePickerControllerDe
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
         self.dismissViewControllerAnimated(true, completion: nil)
         if mediaType.isEqualToString(kUTTypeImage as String) {
-        
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            mysterybug.image = image
+            if (newMedia == true) {
+                UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo", nil)
+            }
+        }
     }
-    
-}
-
-
-   // override func viewDidLoad() {
-     //   super.viewDidLoad()
-
+    // dismisses image picker view and creates an alert for unsaved images and cancel button
+    func image(image: UIImage, didFinishSavingWithError error:NSErrorPointer, contextInfo:UnsafePointer<Void>) {
+        if error != nil {
+            let alert = UIAlertController(title: "Save Failed", message: "Failed to save image", preferredStyle:UIAlertControllerStyle.Alert)
+            let cancelAction = UIAlertAction(title: "OK", style:.Cancel, handler: nil)
+            alert.addAction(cancelAction)
+            self.presentViewController(alert, animated:true, completion:nil)
+        }
+    }
+    // cancels imagepicking session without saving or taking a pic
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    // uploads images to respective image views code obtained from ios8cookbook safaribooksonline
+    let stoneflypic = UIImage(named: "stonefly") // variable to access picture of stonefly from my computer
+    let caddisflypic = UIImage(named: "caddisfly")
+    let blarvaepic = UIImage(named: "beetlelarvae")
+    let mayflypic = UIImage(named: "mayfly")
+    let waterpennypic = UIImage(named: "waterpenny")
+    let damselflypic = UIImage(named: "damsel fly")
+    let dragonflypic = UIImage(named: " dragon fly")
+    let craneflypic = UIImage(named: "Cranefly")
+    let clampic = UIImage(named: "Fingernail Clam")
+    let snailpic = UIImage(named: "watersnail")
+    let blackflypic = UIImage(named: "black fly")
+    let scudpic = UIImage(named: "Scud")
+    let crayfishpic = UIImage(named: "Crayfish")
+    let sowbugpic = UIImage(named: "Aquatic sowbug")
+    let aquaticwormpic = UIImage(named: "Aquaticworm")
+    let midgepic = UIImage(named: "midge")
+    let tubifexpic = UIImage(named: "tubifexworm")
+//}
+    override func viewDidLoad() {
+       super.viewDidLoad()
+image1.image = stoneflypic // image view is populated with stone fly picture
+        image1.addSubview(image1) // displays stonefly picture on second page
+        // view.addSubview was changed to image1.addSubview
+        image2.image = caddisflypic
+        image2.addSubview(image2)
+        image3.image = blarvaepic
+        image3.addSubview(image3)
+        image4.image = mayflypic
+        image4.addSubview(image4)
+        image5.image = waterpennypic
+        image5.addSubview(image5)
+        image6.image = damselflypic
+        image6.addSubview(image6)
+        image7.image = dragonflypic
+        image7.addSubview(image7)
+        image8.image = craneflypic
+        image8.addSubview(image8)
+        image9.image = clampic
+        image9.addSubview(image9)
+        image10.image = snailpic
+        image10.addSubview(image10)
+        image11.image = blackflypic
+        image11.addSubview(image11)
+        image12.image = scudpic
+        image12.addSubview(image12)
+        image13.image = crayfishpic
+        image13.addSubview(image13)
+        image14.image = sowbugpic
+        image14.addSubview(image14)
+        image15.image = aquaticwormpic
+        image15.addSubview(image15)
+        image16.image = midgepic
+        image16.addSubview(image16)
+        image17.image = tubifexpic
+        image17.addSubview(image17)
         // Do any additional setup after loading the view.
-   // }
+}
 
    // override func didReceiveMemoryWarning() {
      //   super.didReceiveMemoryWarning()
