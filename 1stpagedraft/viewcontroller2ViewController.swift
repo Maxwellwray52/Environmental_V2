@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreData
-class viewcontroller2ViewController: UIViewController {
+import MobileCoreServices
+class viewcontroller2ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     //accesses managed object context
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 // outlets for images
@@ -78,6 +79,11 @@ class viewcontroller2ViewController: UIViewController {
     var tolerant2: Int = 0
     // variable that stores tolerance value
     var Tindex: Int = 0
+    // imageview that displays unknown organism
+    @IBOutlet weak var mysterybug: UIImageView!
+    // determines if images are new or old
+    var newMedia: Bool?
+    
     // action for saved entries button
     @IBAction func savedtwo(sender: AnyObject) {
         
@@ -156,6 +162,46 @@ class viewcontroller2ViewController: UIViewController {
     
     //loads camera to take pictures of unknown organisms
     @IBAction func unknown(sender: AnyObject) {
+        // checks if device has a camera 
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        {
+            //assigns delegate 
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            // defines media source as camera
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            // array that stores media
+            imagePicker.mediaTypes = [kUTTypeImage as String] // media is images only
+            imagePicker.allowsEditing = false // no editing allowed
+            // still images only
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+            newMedia = true // images are new and not from the library
+        }
+    }
+    // accesses camera library
+    @IBAction func getlibrary(sender: AnyObject) {
+        //checks if device has a library 
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum)
+        {
+            // assigns delegate 
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            // defines media source as library
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            // array stores media 
+            imagePicker.mediaTypes = [kUTTypeImage as String] // media is images only
+            imagePicker.allowsEditing = false // no editing
+            // still images only
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+            newMedia = false // images are old and from library
+        }
+    }
+    // configures didFinishPickingMediaWithInfo this is called when image is taken and selected
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let mediaType = info[UIImagePickerControllerMediaType] as! NSString
+        self.dismissViewControllerAnimated(true, completion: nil)
+        if mediaType.isEqualToString(kUTTypeImage as String) {
+        
     }
     
 }

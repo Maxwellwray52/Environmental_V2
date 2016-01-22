@@ -196,43 +196,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bug Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-LK-TOs">
-                                <rect key="frame" x="20" y="109" width="129" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="160" width="118" height="30"/>
-                                </variation>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="umg-vo-Ilt">
-                                <rect key="frame" x="20" y="28" width="129" height="76"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="15" y="97" width="86" height="55"/>
-                                </variation>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxq-5A-f2S">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="397" y="601" width="235" height="42"/>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-fZ-TZ4">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="678" y="364" width="86" height="60"/>
-                                </variation>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-uF-HwO">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Unknown Organism"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="645" y="606" width="135" height="30"/>
-                                </variation>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWF-UC-DCp">
+                                <rect key="frame" x="543" y="933" width="81" height="30"/>
+                                <state key="normal" title="Get Library "/>
                                 <connections>
-                                    <action selector="unknown:" destination="PRQ-5k-lEe" eventType="touchUpInside" id="I4X-af-M6b"/>
+                                    <action selector="getlibrary:" destination="PRQ-5k-lEe" eventType="touchUpInside" id="Gl9-ap-Y3i"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xjp-ex-eRI">
@@ -469,16 +437,53 @@
                                     <action selector="savedtwo:" destination="PRQ-5k-lEe" eventType="touchUpInside" id="zPw-uu-adi"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bug Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-LK-TOs">
+                                <rect key="frame" x="20" y="109" width="129" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="8" y="160" width="118" height="30"/>
+                                </variation>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="umg-vo-Ilt">
+                                <rect key="frame" x="20" y="28" width="129" height="76"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="15" y="97" width="86" height="55"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxq-5A-f2S">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="397" y="601" width="235" height="42"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-fZ-TZ4">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="678" y="364" width="86" height="60"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-uF-HwO">
+                                <rect key="frame" x="336" y="941" width="158" height="14"/>
+                                <state key="normal" title="Unknown Organism"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="645" y="606" width="135" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="unknown:" destination="PRQ-5k-lEe" eventType="touchUpInside" id="I4X-af-M6b"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apO-y9-lfA">
+                                <rect key="frame" x="384" y="781" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.5"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="kZe-LK-TOs"/>
-                                <exclude reference="umg-vo-Ilt"/>
-                                <exclude reference="Dxq-5A-f2S"/>
-                                <exclude reference="lKz-fZ-TZ4"/>
-                                <exclude reference="Ygq-uF-HwO"/>
                                 <exclude reference="Xjp-ex-eRI"/>
                                 <exclude reference="DSi-L5-cWd"/>
                                 <exclude reference="H4F-wK-WFv"/>
@@ -512,15 +517,15 @@
                                 <exclude reference="FGQ-68-uki"/>
                                 <exclude reference="Xn9-bT-5xJ"/>
                                 <exclude reference="z51-Kk-4N4"/>
+                                <exclude reference="kZe-LK-TOs"/>
+                                <exclude reference="umg-vo-Ilt"/>
+                                <exclude reference="Dxq-5A-f2S"/>
+                                <exclude reference="lKz-fZ-TZ4"/>
+                                <exclude reference="Ygq-uF-HwO"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="kZe-LK-TOs"/>
-                                <include reference="umg-vo-Ilt"/>
-                                <include reference="Dxq-5A-f2S"/>
-                                <include reference="lKz-fZ-TZ4"/>
-                                <include reference="Ygq-uF-HwO"/>
                                 <include reference="Xjp-ex-eRI"/>
                                 <include reference="DSi-L5-cWd"/>
                                 <include reference="H4F-wK-WFv"/>
@@ -554,6 +559,11 @@
                                 <include reference="FGQ-68-uki"/>
                                 <include reference="Xn9-bT-5xJ"/>
                                 <include reference="z51-Kk-4N4"/>
+                                <include reference="kZe-LK-TOs"/>
+                                <include reference="umg-vo-Ilt"/>
+                                <include reference="Dxq-5A-f2S"/>
+                                <include reference="lKz-fZ-TZ4"/>
+                                <include reference="Ygq-uF-HwO"/>
                             </mask>
                         </variation>
                     </view>
@@ -608,6 +618,7 @@
                         <outlet property="image7" destination="2Gg-cF-atg" id="Qco-7l-Udt"/>
                         <outlet property="image8" destination="b7N-By-ZnU" id="2oz-eq-fe8"/>
                         <outlet property="image9" destination="Ru8-5x-uwT" id="w8D-WX-cVm"/>
+                        <outlet property="mysterybug" destination="apO-y9-lfA" id="M1Y-Kk-U9D"/>
                         <outlet property="saved2" destination="Dxq-5A-f2S" id="Tvq-ih-anD"/>
                     </connections>
                 </viewController>
@@ -996,9 +1007,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1Rv-a3-wk8"/>
-        <segue reference="h2s-He-vEp"/>
+        <segue reference="IcU-Rp-UHQ"/>
         <segue reference="cyo-uB-hdg"/>
         <segue reference="7HS-ei-r7E"/>
+        <segue reference="1Rv-a3-wk8"/>
     </inferredMetricsTieBreakers>
 </document>
