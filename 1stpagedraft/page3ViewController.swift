@@ -47,10 +47,12 @@ class page3ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var flowlevelpickerlabel: UILabel!
     @IBOutlet weak var varietypickerlabel: UILabel!
     // variable that stores health index
-    var healthindex: Double = 0.0
+    var healthindex: NSNumber = 0.0
     var selection1: Double = 0.0
     var selection2: Double = 0.0
     var selection3: Double = 0.0
+    // array that stores data
+    var htracker = [NSManagedObject]()
         // saves entries
     @IBAction func save3(sender: AnyObject) {
         // creates entity description
@@ -76,7 +78,9 @@ class page3ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         third.pick8value = picker8selection
         // stores health index value
         third.hindex = healthindex
-        
+        // accesses attribute from nsmanaged context using key value coding
+        healthindex = (Habitat.valueForKey("hindex") as? NSNumber!)!
+
         // saves data
         do {
             try managedObjectContext.save()
@@ -116,7 +120,27 @@ class page3ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         picker7data = ["Bottom not exposed", "Bottom Partially Exposed", " Bottom Mostly Exposed", "No Rocks"]
         picker8data = ["Deep pools varied runs & riffles", "Shallow pools, runs & riffles", "only riffles and runs", "mostly runs"]
         
+        // fetches data
+        //accesses application delegate to obtain managed object context
+        let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedcontext = appdelegate.managedObjectContext
+        // fetch request
+        let fetchrequest = NSFetchRequest(entityName: "Habitat")
+        // filters request to return tolerance value
+        let healthpredicate = NSPredicate(format:"hindex >=0")
+        (htracker as NSArray).filteredArrayUsingPredicate(healthpredicate)
+        do {
+            let results = try managedcontext.executeFetchRequest(fetchrequest)
+            htracker = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print(" Could not fetch \(error), \(error.userInfo)")
+        }
     }
+    
+
+    
+        
+   // }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

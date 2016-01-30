@@ -78,7 +78,11 @@ class viewcontroller2ViewController: UIViewController, UIImagePickerControllerDe
     var tolerant1: Int = 0
     var tolerant2: Int = 0
     // variable that stores tolerance value
-    var Tindex: Int = 0
+    var Tindex: NSNumber = 0
+    // array for tolerance index 
+    //var ttracker: [Int] = []
+    // array that stores data
+    var bugstracker = [NSManagedObject]()
     // imageview that displays unknown organism
     @IBOutlet weak var mysterybug: UIImageView!
     // determines if images are new or old
@@ -91,7 +95,7 @@ class viewcontroller2ViewController: UIViewController, UIImagePickerControllerDe
         let entityDescription = NSEntityDescription.entityForName("Bugs", inManagedObjectContext: managedObjectContext)
         // second is an instance of the bugs identity
         let second = Bugs(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
-        // attributes are set to values the textfield
+        // attributes are set to values of the textfields
         second.bug1 = amount1.text!
         b1 = Int(second.bug1!)!
         second.bug2 = amount2.text!
@@ -128,6 +132,10 @@ class viewcontroller2ViewController: UIViewController, UIImagePickerControllerDe
         b17 = Int(second.bug17!)!
         // saves tolerance index
         second.tolerance = Tindex
+        // accesses attribute from nsmanaged context using key value coding
+        Tindex = (Bugs.valueForKey("tolerance") as? NSNumber!)!
+        // saves Tindex into array
+        //ttracker[0] = Tindex
         // saves data
         do {
             
@@ -277,6 +285,24 @@ image1.image = stoneflypic // image view is populated with stone fly picture
         image16.addSubview(image16)
         image17.image = tubifexpic
         image17.addSubview(image17)
+        // fetches data
+        //accesses application delegate to obtain managed object context
+         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedcontext = appdelegate.managedObjectContext
+        // fetch request 
+        let fetchrequest = NSFetchRequest(entityName: "Bugs")
+        // filters request to return tolerance value
+        let tolerancepredicate = NSPredicate(format:"tolerance >=0")
+        (bugstracker as NSArray).filteredArrayUsingPredicate(tolerancepredicate)
+        do {
+            let results = try managedcontext.executeFetchRequest(fetchrequest)
+            bugstracker = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print(" Could not fetch \(error), \(error.userInfo)")
+        }
+        }
+        
+        
         // Do any additional setup after loading the view.
 }
 
