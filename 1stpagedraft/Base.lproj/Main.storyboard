@@ -122,7 +122,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mf-7P-RPv">
-                                <rect key="frame" x="221" y="254" width="30" height="30"/>
+                                <rect key="frame" x="221" y="254" width="110" height="20"/>
                                 <state key="normal" title="save entries"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="411" y="392" width="83" height="30"/>
@@ -155,17 +155,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="To 2" id="LYG-3L-X3Z">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="85o-sh-yJA">
+                        <barButtonItem key="rightBarButtonItem" title="to 2" id="wLU-NU-llE">
                             <connections>
-                                <segue destination="PRQ-5k-lEe" kind="presentation" id="iuD-1a-Jdb"/>
+                                <segue destination="PRQ-5k-lEe" kind="show" id="jZr-fe-rhg"/>
                             </connections>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="85o-sh-yJA">
-                        <connections>
-                            <outlet property="rightBarButtonItem" destination="LYG-3L-X3Z" id="wbL-U6-mYP"/>
-                        </connections>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
@@ -183,9 +179,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1725.75" y="312.75"/>
+            <point key="canvasLocation" x="1809" y="323"/>
         </scene>
-        <!--Viewcontroller2 View Controller-->
+        <!--navigate2-->
         <scene sceneID="NiX-l0-x5m">
             <objects>
                 <viewController id="PRQ-5k-lEe" customClass="viewcontroller2ViewController" customModule="firstpagedraft" sceneMemberID="viewController">
@@ -193,11 +189,11 @@
                         <viewControllerLayoutGuide type="top" id="6Oq-fx-kTe"/>
                         <viewControllerLayoutGuide type="bottom" id="8mP-SC-ZMu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Vpp-ru-013">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Vpp-ru-013">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWF-UC-DCp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWF-UC-DCp">
                                 <rect key="frame" x="543" y="933" width="81" height="30"/>
                                 <state key="normal" title="Get Library "/>
                                 <connections>
@@ -240,8 +236,24 @@
                                     <rect key="frame" x="405" y="160" width="118" height="30"/>
                                 </variation>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apO-y9-lfA">
+                                <rect key="frame" x="384" y="781" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="v6m-o4-qIo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-uF-HwO">
+                                <rect key="frame" x="356" y="940" width="158" height="14"/>
+                                <state key="normal" title="Unknown Organism"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="645" y="606" width="135" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="unknown:" destination="PRQ-5k-lEe" eventType="touchUpInside" id="I4X-af-M6b"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-NF-HES">
-                                <rect key="frame" x="475" y="28" width="112" height="74"/>
+                                <rect key="frame" x="42" y="44" width="112" height="74"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="405" y="97" width="86" height="55"/>
                                 </variation>
@@ -467,22 +479,16 @@
                                     <rect key="frame" x="678" y="364" width="86" height="60"/>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apO-y9-lfA">
-                                <rect key="frame" x="384" y="781" width="240" height="128"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-uF-HwO">
-                                <rect key="frame" x="356" y="940" width="158" height="14"/>
-                                <state key="normal" title="Unknown Organism"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="645" y="606" width="135" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="unknown:" destination="PRQ-5k-lEe" eventType="touchUpInside" id="I4X-af-M6b"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.5"/>
+                        <constraints>
+                            <constraint firstItem="NWF-UC-DCp" firstAttribute="trailing" secondItem="apO-y9-lfA" secondAttribute="trailing" id="2Vn-HS-R66"/>
+                            <constraint firstAttribute="trailing" secondItem="apO-y9-lfA" secondAttribute="trailing" constant="144" id="Kiw-X3-mG0"/>
+                            <constraint firstItem="8mP-SC-ZMu" firstAttribute="top" secondItem="NWF-UC-DCp" secondAttribute="bottom" constant="17" id="UMp-Nd-3LP"/>
+                            <constraint firstItem="apO-y9-lfA" firstAttribute="top" secondItem="6Oq-fx-kTe" secondAttribute="bottom" constant="761" id="mr9-KG-Wda"/>
+                            <constraint firstItem="NWF-UC-DCp" firstAttribute="top" secondItem="apO-y9-lfA" secondAttribute="bottom" constant="24" id="yuJ-1s-jco"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Xjp-ex-eRI"/>
@@ -490,6 +496,7 @@
                                 <exclude reference="H4F-wK-WFv"/>
                                 <exclude reference="i6L-Dr-6EP"/>
                                 <exclude reference="SGC-ff-Nso"/>
+                                <exclude reference="Ygq-uF-HwO"/>
                                 <exclude reference="JJJ-NF-HES"/>
                                 <exclude reference="WOT-Fn-1iK"/>
                                 <exclude reference="eJU-AA-o4x"/>
@@ -522,7 +529,6 @@
                                 <exclude reference="umg-vo-Ilt"/>
                                 <exclude reference="Dxq-5A-f2S"/>
                                 <exclude reference="lKz-fZ-TZ4"/>
-                                <exclude reference="Ygq-uF-HwO"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -532,6 +538,7 @@
                                 <include reference="H4F-wK-WFv"/>
                                 <include reference="i6L-Dr-6EP"/>
                                 <include reference="SGC-ff-Nso"/>
+                                <include reference="Ygq-uF-HwO"/>
                                 <include reference="JJJ-NF-HES"/>
                                 <include reference="WOT-Fn-1iK"/>
                                 <include reference="eJU-AA-o4x"/>
@@ -564,21 +571,14 @@
                                 <include reference="umg-vo-Ilt"/>
                                 <include reference="Dxq-5A-f2S"/>
                                 <include reference="lKz-fZ-TZ4"/>
-                                <include reference="Ygq-uF-HwO"/>
                             </mask>
                         </variation>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="To 3" id="Cuv-pC-2uF">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="navigate2" id="Fz0-On-jfS">
+                        <barButtonItem key="leftBarButtonItem" title="To 3" width="52" id="Cuv-pC-2uF">
                             <connections>
                                 <segue destination="wY5-6m-neo" kind="presentation" id="cyo-uB-hdg"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="rCK-r4-lTJ">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="bNl-ak-eIu">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="1Rv-a3-wk8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -625,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQH-cO-quN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3162" y="227"/>
+            <point key="canvasLocation" x="2846" y="228"/>
         </scene>
         <!--Page3 View Controller-->
         <scene sceneID="4zR-jQ-qZr">
@@ -867,10 +867,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHJ-oe-zxB">
                                 <rect key="frame" x="71" y="504" width="112" height="44"/>
                                 <state key="normal" title="Save Entry"/>
+                                <connections>
+                                    <action selector="saveall:" destination="cs2-0Y-Kx9" eventType="touchUpInside" id="VYS-Rx-wRe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVl-I0-nQn">
                                 <rect key="frame" x="340" y="511" width="111" height="30"/>
                                 <state key="normal" title="Enter New Entry"/>
+                                <connections>
+                                    <action selector="newentry:" destination="cs2-0Y-Kx9" eventType="touchUpInside" id="PVW-8u-gBY"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Environmental Analysis" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-l8-mau">
                                 <rect key="frame" x="100" y="254" width="240" height="128"/>
@@ -909,7 +915,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ys9-na-5m8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6133" y="121"/>
+            <point key="canvasLocation" x="6125" y="-7"/>
         </scene>
         <!--Page5 View Controller-->
         <scene sceneID="Li2-Yp-rZ2">
@@ -923,7 +929,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yhi-Np-aDr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yhi-Np-aDr">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -1078,10 +1084,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cw7-C6-emm"/>
-        <segue reference="0WK-Hy-Nzy"/>
+        <segue reference="jZr-fe-rhg"/>
         <segue reference="cyo-uB-hdg"/>
-        <segue reference="IcU-Rp-UHQ"/>
-        <segue reference="1Rv-a3-wk8"/>
+        <segue reference="7HS-ei-r7E"/>
+        <segue reference="IXW-DU-AGA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class Page5ViewController: UIViewController, UITableViewDataSource {
+class Page5ViewController: UIViewController { //UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
